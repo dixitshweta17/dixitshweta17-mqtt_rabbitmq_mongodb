@@ -35,15 +35,3 @@ Do the RabbitMQ Setup
 #manually add: set PATH=%PATH%;C:\Program Files\Erlang OTP\bin
 
 
-## 5.RabbitMQ Credentials
-
-Navigate to http://localhost:15672
-Log in with the default credentials:
-Username: guest
-Password: guest
-
-
-## 6. Project Structure:
-Client.py: Publish msg to que
-Server.py: Consume mst from que
-app.py: handle status count (http://127.0.0.1:5000/status_count?start=2024-07-18T00:00:00&end=2024-07-18T23:59:59)
