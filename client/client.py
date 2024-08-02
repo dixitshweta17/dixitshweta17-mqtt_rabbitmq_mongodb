@@ -18,17 +18,18 @@ client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
 
-# client.connect(BROKER_ADDRESS, 1883, 60)
-client.connect("localhost", 1883, 60)
-# client.loop_start()
+client.connect(BROKER_ADDRESS, 1883, 60)
+# client.connect("localhost", 1883, 60)
+client.loop_start()
 
 while True:
     status = random.randint(0, 6)
     message = json.dumps({"status": status})
+    # client.publish(TOPIC, message)
     client.publish("mqtt_queue", message)
     print("Published message:", message)  # Debug print
     time.sleep(1)
-    client.loop_forever()
+    # client.loop_forever()
 
 # client.loop_forever()
 
